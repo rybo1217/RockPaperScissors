@@ -1,43 +1,114 @@
 
 
-let comAns = ["Rock","Paper","Scissors"]
 
-//const pAns=prompt("Choose Rock, Paper, or Scissors.")
+    let cpuScore=0;
+    let playerScore=0;
+function play(choice){
+    
 
-if(comAns == "Rock" && pAns=="Rock")
-{
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    let comAnsChoices = ["Rock","Paper","Scissors"];
+    let comAns=(comAnsChoices[Math.floor(Math.random() * 3)]);
+    let winner = "";
+   
+    document.getElementById("statement1").innerHTML = `You: ${choice}`;
+    document.getElementById("statement2").innerHTML = `CPU: ${comAns}`;
+    console.log("CPU Answer:"+comAns);
+
+ 
+    if(comAns == "Rock" && choice=="Paper")
+    {
+        winner = "Player";
+    }
+    else if(comAns == "Rock" && choice=="Scissors")
+    {
+        winner = "CPU";
+    }
+    else if(comAns == "Paper" && choice=="Rock")
+    {
+        winner = "CPU";
+    }
+    else if(comAns == "Paper" && choice=="Scissors")
+    {
+        winner = "Player";
+    }
+    else if(comAns == "Scissors" && choice=="Rock")
+    {
+        winner = "Player";
+    }
+    else if(comAns == "Scissors" && choice=="Paper")
+    {
+        winner = "CPU";
+    }
+    else if(comAns==choice)
+    {
+        winner="Draw";
+    }
+    
+    if(winner=="Player" || winner=="CPU"){//showing winner
+        document.getElementById("end").innerHTML = `${winner} Wins!`;
+    }
+    else{
+        document.getElementById("end").innerHTML = `Its a Draw`;
+    }
+
+    if(winner=="Player"){
+        playerScore++;
+    }
+    else if(winner=="CPU"){
+        cpuScore++;
+    }
+    document.getElementById("labels1").innerHTML = `${playerScore}`;//scores
+    document.getElementById("labels2").innerHTML = `${cpuScore}`;
+
+    return winner
 
 }
-elif(comAns == "Rock" && pAns=="Paper")
-{
-    console.log(comAns[Math.floor(Math.random() * 3)])
+function main(choice){
+    let victor = play(choice);//winner of match
+    console.log(victor);
 }
-elif(comAns == "Rock" && pAns=="Scissors")
+
+
+//const input = prompt("What's your name?");
+
+/*
+
+if(comAns == "Rock" && choice=="Rock")
 {
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    winner = "";
+
 }
-elif(comAns == "Paper" && pAns=="Rock")
+else if(comAns == "Rock" && choice=="Paper")
 {
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    winner = "";
 }
-elif(comAns == "Paper" && pAns=="Paper")
+else if(comAns == "Rock" && choice=="Scissors")
 {
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    winner = "";
 }
-elif(comAns == "Paper" && pAns=="Scissors")
+else if(comAns == "Paper" && choice=="Rock")
 {
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    winner = "";
 }
-elif(comAns == "Scissors" && pAns=="Rock")
+else if(comAns == "Paper" && choice=="Paper")
 {
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    winner = "";
 }
-elif(comAns == "Scissors" && pAns=="Paper")
+else if(comAns == "Paper" && choice=="Scissors")
 {
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    winner = "";
 }
-elif(comAns == "Scissors" && pAns=="Scissors")
+else if(comAns == "Scissors" && choice=="Rock")
 {
-    console.log(comAns[Math.floor(Math.random() * 3)])
+    winner = "";
 }
+else if(comAns == "Scissors" && choice=="Paper")
+{
+    winner = "";
+}
+else if(comAns == "Scissors" && choice=="Scissors")
+{
+    winner = "";
+}
+
+*/

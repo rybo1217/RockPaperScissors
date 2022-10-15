@@ -12,8 +12,36 @@
 <body>
 
     <div class = 'Choices'> 
-        
+        <button id="box" type="button" value="Rock" onclick='main(this.value)' >Rock</button>
+        <button id="box" type="button"value="Paper" onclick='main(this.value)' >Paper</button>
+        <button id="box" type="button"value="Scissors" onclick='main(this.value)'>Scissors</button>
+
+    </div>
+
+    <div class = 'Score'>
+        <div id ="labels">Your Score</div>
+        <div id ="labels">Computer's Score</div>
+
+    </div>
+
+    <div class = 'Score2'>
+        <div id ="labels1">0</div>
+        <div id ="labels2">0</div>
+
+    </div>
+
+    <div class = 'Result'>
+        <div id ="statement1">You:_______</div>
+        <div id ="statement2">CPU:_______</div>
+
+    </div>
+
+    <div class = 'Decision'>
+        <div id ="end">Loser or Winner</div>
+       
 
     </div>
 
 </body>
+
+<script src="rps.js"></script>
